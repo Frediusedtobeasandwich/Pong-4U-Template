@@ -193,7 +193,7 @@ namespace Pong
 
             #region update paddle positions
 
-            if (aKeyDown == true && p1.Y > 0)
+            if (aKeyDown == true && p1.Y > 2)
             {
                 // TODO create code to move player 1 paddle up using p1.Y and paddleSpeed
                 p1.Y = p1.Y - paddleSpeed;
@@ -206,7 +206,7 @@ namespace Pong
             }
 
             // TODO create an if statement and code to move player 2 paddle up using p2.Y and paddleSpeed
-            if (jKeyDown == true && p2.Y > 0)
+            if (jKeyDown == true && p2.Y > 2)
             {
                 p2.Y = p2.Y - paddleSpeed;
             }
@@ -364,6 +364,7 @@ namespace Pong
             #endregion
 
             //refresh the screen, which causes the Form1_Paint method to run
+            drawBrush.Color = Color.FromArgb(p1.Y / 2,  120, p2.Y / 2);
             this.Refresh();
         }
         
